@@ -1,0 +1,38 @@
+<!-- ASSIGN OUR ANGUAL MODULE -->
+<html ng-app="myTodo">
+<head>
+	<!-- META -->
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>My Todos</title>
+
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
+    <style>
+        html                    { overflow-y:scroll; }
+        body                    { padding-top:50px; }
+        #list              { margin-bottom:30px; }
+    </style>
+
+     <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script>
+    <script src="core.js"></script>
+
+</head>
+<body ng-controller="mainContoller">
+	<div class="container">
+		<div class="jumbotron text-center">
+            <h1>My Todo List <span class="label label-info">{{ todos.length }}</span></h1>
+        </div>
+
+		<div id="list" class="row">
+			 <div class="col-sm-4 col-sm-offset-4">
+			 	 <div class="checkbox" ng-repeat="todo in todos">
+                    <label>
+                        <input type="checkbox" ng-click="deleteTodo(todo._id)"> {{ todo.text }}
+                    </label>
+                </div>
+            </div>
+        </div>
+
+
